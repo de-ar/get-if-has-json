@@ -1,6 +1,6 @@
 # get-if-has-json
 
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/de-ar/get-if-has-json/Build/main)
+[![Build](https://github.com/de-ar/get-if-has-json/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/de-ar/get-if-has-json/actions/workflows/build.yml)
 [![Latest Stable Version](https://img.shields.io/npm/v/get-if-has-json.svg)](https://www.npmjs.com/package/get-if-has-json)
 [![NPM Downloads](https://img.shields.io/npm/dt/get-if-has-json.svg)](https://www.npmjs.com/package/get-if-has-json)
 [![Dependency Status](https://img.shields.io/david/de-ar/get-if-has-json.svg)](https://david-dm.org/de-ar/get-if-has-json)
