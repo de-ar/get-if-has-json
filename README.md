@@ -1,6 +1,7 @@
 # get-if-has-json
 
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/de-ar/get-if-has-json/Build/main)
+![Dependencies' status](https://david-dm.org/de-ar/get-if-has-json.svg)
 
 Extract JSON from a string that contains a bunch of crap before or after a valid JSON Object.
 
