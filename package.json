@@ -1,0 +1,42 @@
+{
+  "name": "get-if-has-json",
+  "version": "1.0.0",
+  "description": "Extract JSON from a string that contains a bunch of crap before or after a valid JSON Object.",
+  "keywords": [
+    "JSON",
+    "parse",
+    "string",
+    "crap"
+  ],
+  "homepage": "https://github.com/de-ar/get-if-has-json#readme",
+  "bugs": {
+    "url": "https://github.com/de-ar/get-if-has-json/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/de-ar/get-if-has-json.git"
+  },
+  "license": "WTFPL",
+  "author": "Arslan Ahmad <de.arslanahmad@gmail.com>",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "rimraf lib && tsc -p .",
+    "lint": "prettier -c . || prettier -w .",
+    "test": "tap --ts"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "@types/nodemon": "^1.19.0",
+    "@types/prettier": "^2.2.3",
+    "@types/rimraf": "^3.0.0",
+    "@types/tap": "^14.10.3",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "tap": "^15.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
