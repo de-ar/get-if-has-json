@@ -11,15 +11,19 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v2
       - name: Setup NodeJS
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v1
         with:
           node-version: 12
+      - name: Setup Yarn
+        run: npm install -g yarn
       - name: Install dependencies
-        run: npm ci
-      - name: Build package
-        run: npm build
+        run: yarn
+      - name: Build
+        run: yarn build
       - name: Run tests
-        run: npm test
+        run: yarn test
+      - name: Uninstall yarn
+        run: npm uninstall -g yarn
 
   publish-npm:
     needs: build
@@ -32,9 +36,15 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+      - name: Setup Yarn
+        run: npm install -g yarn
       - name: Install dependencies
-        run: npm ci
+        run: yarn
+      - name: Build package
+        run: yarn build
       - name: Publish to NPM
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Uninstall yarn
+        run: npm uninstall -g yarn

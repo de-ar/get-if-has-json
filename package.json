@@ -1,6 +1,6 @@
 {
   "name": "get-if-has-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extract JSON from a string that contains a bunch of crap before or after a valid JSON Object.",
   "keywords": [
     "JSON",
@@ -22,17 +22,21 @@
   "types": "lib",
   "scripts": {
     "dev": "nodemon",
-    "build": "rimraf lib && tsc -p .",
+    "clean": "rimraf lib",
+    "compile": "tsc -p .",
     "lint": "prettier -c . || prettier -w .",
-    "test": "tap --ts"
+    "tap": "tap --ts",
+    "test": "run-s build tap",
+    "build": "run-s --print-label clean compile"
   },
   "devDependencies": {
-    "@types/node": "^14.14.37",
+    "@types/node": "^14.14.41",
     "@types/nodemon": "^1.19.0",
     "@types/prettier": "^2.2.3",
     "@types/rimraf": "^3.0.0",
-    "@types/tap": "^14.10.3",
+    "@types/tap": "^15.0.0",
     "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "tap": "^15.0.2",

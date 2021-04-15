@@ -5,4 +5,4 @@ node_js:
 install:
   - npm ci
 script:
-  - npm run build && npm test
+  - npm t
