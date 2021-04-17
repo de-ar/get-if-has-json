@@ -50,10 +50,18 @@ test(`returns parsable JSON string with parameter: '${JSON.stringify(
 // empty JSON Object with crap on both sides
 test(`returns parsable JSON string with parameter: '${
   'foo' + JSON.stringify(obj) + 'bar'
-}'`, () => expect(getIfHasJSON(JSON.stringify(obj))).toBe(JSON.stringify(obj)))
+}'`, () =>
+  expect(getIfHasJSON('foo' + JSON.stringify(obj) + 'bar')).toBe(
+    JSON.stringify(obj),
+  ))
 
 // valid JSON Object with crap on both sides
 obj = { john: 'doe', foo: true }
 test(`returns parsable JSON string with parameter: '${
   'salkdj fslkf slkdfsd ' + JSON.stringify(obj) + '^&%$&^(*&^*&^'
-}'`, () => expect(getIfHasJSON(JSON.stringify(obj))).toBe(JSON.stringify(obj)))
+}'`, () =>
+  expect(
+    getIfHasJSON(
+      'salkdj fslkf slkdfsd ' + JSON.stringify(obj) + '^&%$&^(*&^*&^',
+    ),
+  ).toBe(JSON.stringify(obj)))
