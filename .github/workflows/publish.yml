@@ -5,21 +5,22 @@ on:
     types: [created]
 
 jobs:
-  build:
+build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [10, 12, 14, 15, 16]
     steps:
       - name: Setup repo
         uses: actions/checkout@v2
       - name: Setup NodeJS
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: ${{ matrix.node }}
       - name: Setup Yarn
         run: npm install -g yarn
       - name: Install dependencies
         run: yarn
-      - name: Build
-        run: yarn build
       - name: Run tests
         run: yarn test
       - name: Uninstall yarn
