@@ -36,4 +36,4 @@ getIfHasJSON('salkdj fslkf slkdfsd ' + JSON.stringify(obj) + '^&%$&^(*&^*&^')
 
 ### Returns
 
-- `{String}` A valid parsable JSON String
+- `{String}` A valid parsable JSON String.
