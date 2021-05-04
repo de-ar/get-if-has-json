@@ -23,11 +23,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - name: Setup Yarn
-        run: npm install -g yarn
       - name: Install dependencies
         run: yarn
       - name: Run tests
         run: yarn test
-      - name: Uninstall yarn
-        run: npm uninstall -g yarn

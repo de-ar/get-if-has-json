@@ -32,7 +32,8 @@
     "pretest": "yarn build",
     "test": "jest --coverage",
     "pretest:coveralls": "yarn pretest",
-    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/node": "^15.0.0",
@@ -45,6 +46,7 @@
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "husky": "^6.0.0"
   }
 }
