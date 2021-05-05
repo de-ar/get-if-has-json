@@ -31,12 +31,13 @@
     "prepretest": "rimraf coverage .nyc_output",
     "pretest": "yarn build",
     "test": "jest --coverage",
+    "posttest": "rimraf lib",
     "pretest:coveralls": "yarn pretest",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@types/node": "^15.0.0",
+    "@types/node": "^15.0.2",
     "@types/nodemon": "^1.19.0",
     "@types/prettier": "^2.2.3",
     "@types/rimraf": "^3.0.0",
