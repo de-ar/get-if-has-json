@@ -4,14 +4,15 @@
  * @since 0.2.0
  * @category Function
  * @param {string} str String that contains a JSON object.
- * @returns {string} A valid parsable JSON String.
+ * @returns {object} Parsed JSON.
  * @example
  *
- * const obj = { john: 'doe', foo: true }
- * getIfHasJSON('salkdj fslkf slkdfsd ' + JSON.stringify(obj) + '^&%$&^(*&^*&^')
- * // => Output: "{"john":"doe","foo":true}"
+ * const json = require('get-if-has-json')
+ *
+ * json('foo {  } bar')
+ * // Output: {}
  */
-const getIfHasJSON = (str: string): string | undefined => {
+const json = (str: string): object | undefined => {
   let start: number = -Infinity,
     end: number = Infinity
   start = str.indexOf('{', start + 1)
@@ -19,7 +20,7 @@ const getIfHasJSON = (str: string): string | undefined => {
     end = str.lastIndexOf('}')
     while (end > start) {
       try {
-        return JSON.stringify(JSON.parse(str.substring(start, end + 1)))
+        return JSON.parse(str.substring(start, end + 1))
       } catch (e) {}
       end = str.substr(0, end).lastIndexOf('}')
     }
@@ -27,4 +28,4 @@ const getIfHasJSON = (str: string): string | undefined => {
   }
 }
 
-export = getIfHasJSON
+export = json

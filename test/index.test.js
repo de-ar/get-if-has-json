@@ -1,70 +1,64 @@
-const getIfHasJSON = require('../lib')
+const json = require('../lib')
 
-describe('#getIfHasJSON', () => {
+describe('#json', () => {
   let param = ''
   let obj = {}
 
   // empty string
   test(`returns undefined with parameter: '${param}'`, () =>
-    expect(getIfHasJSON(param)).toBeUndefined())
+    expect(json(param)).toBeUndefined())
 
   // crap
   param = '{{{'
   test(`returns undefined with parameter: '${param}'`, () =>
-    expect(getIfHasJSON(param)).toBeUndefined())
+    expect(json(param)).toBeUndefined())
 
   // crap
   param = '!@#$%^&*()_+'
   test(`returns undefined with parameter: '${param}'`, () =>
-    expect(getIfHasJSON(param)).toBeUndefined())
+    expect(json(param)).toBeUndefined())
 
   // crap
   param = '}}}'
   test(`returns undefined with parameter: '${param}'`, () =>
-    expect(getIfHasJSON(param)).toBeUndefined())
+    expect(json(param)).toBeUndefined())
 
   // invalid JSON Object
   param = '{[]}'
   test(`returns undefined with parameter: '${param}'`, () =>
-    expect(getIfHasJSON(param)).toBeUndefined())
+    expect(json(param)).toBeUndefined())
 
   // invalid JSON Object
   param = '{"foo":bar}'
   test(`returns undefined with parameter: '${param}'`, () =>
-    expect(getIfHasJSON(param)).toBeUndefined())
+    expect(json(param)).toBeUndefined())
 
   // invalid JSON Object
   param = '{foo:"bar"}'
   test(`returns undefined with parameter: '${param}'`, () =>
-    expect(getIfHasJSON(param)).toBeUndefined())
+    expect(json(param)).toBeUndefined())
 
   // invalid JSON Object
   param = '{foo:"bar}'
   test(`returns undefined with parameter: '${param}'`, () =>
-    expect(getIfHasJSON(param)).toBeUndefined())
+    expect(json(param)).toBeUndefined())
 
   // empty JSON Object
-  test(`returns parsable JSON string with parameter: '${JSON.stringify(
-    obj,
-  )}'`, () =>
-    expect(getIfHasJSON(JSON.stringify(obj))).toBe(JSON.stringify(obj)))
+  test(`parsed JSON object with parameter: '${JSON.stringify(obj)}'`, () =>
+    expect(json(JSON.stringify(obj))).toStrictEqual(obj))
 
   // empty JSON Object with crap on both sides
-  test(`returns parsable JSON string with parameter: '${
+  test(`parsed JSON object with parameter: '${
     'foo' + JSON.stringify(obj) + 'bar'
   }'`, () =>
-    expect(getIfHasJSON('foo' + JSON.stringify(obj) + 'bar')).toBe(
-      JSON.stringify(obj),
-    ))
+    expect(json('foo' + JSON.stringify(obj) + 'bar')).toStrictEqual(obj))
 
   // valid JSON Object with crap on both sides
   obj = { john: 'doe', foo: true }
-  test(`returns parsable JSON string with parameter: '${
+  test(`parsed JSON object with parameter: '${
     'salkdj fslkf slkdfsd ' + JSON.stringify(obj) + '^&%$&^(*&^*&^'
   }'`, () =>
     expect(
-      getIfHasJSON(
-        'salkdj fslkf slkdfsd ' + JSON.stringify(obj) + '^&%$&^(*&^*&^',
-      ),
-    ).toBe(JSON.stringify(obj)))
+      json('salkdj fslkf slkdfsd ' + JSON.stringify(obj) + '^&%$&^(*&^*&^'),
+    ).toStrictEqual(obj))
 })

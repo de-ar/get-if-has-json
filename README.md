@@ -16,14 +16,15 @@ npm i get-if-has-json
 ## Usage
 
 ```js
-const getIfHasJSON = require('get-if-has-json')
+const json = require('get-if-has-json')
+
+json('foo {  } bar')
+// Output: {}
 
 const obj = { john: 'doe', foo: true }
 
-getIfHasJSON('foo' + JSON.stringify({}) + 'bar')
-// Output: {}
-getIfHasJSON('salkdj fslkf slkdfsd ' + JSON.stringify(obj) + '^&%$&^(*&^*&^')
-// Output: {"john":"doe","foo":true}
+json('loru' + JSON.stringify(obj) + 'lalit')
+// => Output: {"john":"doe","foo":true}
 ```
 
 ## API
@@ -34,4 +35,4 @@ getIfHasJSON('salkdj fslkf slkdfsd ' + JSON.stringify(obj) + '^&%$&^(*&^*&^')
 
 ### Returns
 
-- `{String}` A valid parsable JSON String.
+- `{Object}` Parsed JSON.
