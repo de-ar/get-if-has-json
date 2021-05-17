@@ -6,11 +6,9 @@
     "target": "ES5",
     "noImplicitAny": true,
     "moduleResolution": "node",
-    "sourceMap": true,
     "outDir": "lib",
     "strict": true,
-    "declaration": true,
-    "declarationMap": true
+    "declaration": true
   },
   "include": ["src/**/*"]
 }
