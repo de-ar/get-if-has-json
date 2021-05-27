@@ -20,11 +20,6 @@ const json = require('get-if-has-json')
 
 json('foo {  } bar')
 // Output: {}
-
-const obj = { john: 'doe', foo: true }
-
-json('loru' + JSON.stringify(obj) + 'lalit')
-// => Output: {"john":"doe","foo":true}
 ```
 
 ## API
