@@ -1,6 +1,6 @@
 {
   "name": "get-if-has-json",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Extract JSON from a string that contains a bunch of crap before or after a valid JSON Object.",
   "keywords": [
     "JSON",
