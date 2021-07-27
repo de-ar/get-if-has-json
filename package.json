@@ -32,9 +32,9 @@
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "devDependencies": {
-    "coveralls": "^3.1.0",
-    "jest": "^27.0.5",
-    "prettier": "^2.3.1",
-    "typescript": "^4.3.4"
+    "coveralls": "^3.1.1",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
   }
 }
