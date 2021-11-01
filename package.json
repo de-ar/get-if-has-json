@@ -1,6 +1,6 @@
 {
   "name": "get-if-has-json",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Extract JSON from a string that contains a bunch of crap before or after a valid JSON Object.",
   "keywords": [
     "JSON",
@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "build": "tsc -p .",
-    "pretty": "prettier -c . || prettier -w .",
+    "format": "prettier -c . || prettier -w .",
     "pretest": "yarn build",
     "test": "jest --coverage",
     "pretest:coveralls": "yarn pretest",
@@ -33,8 +33,8 @@
   },
   "devDependencies": {
     "coveralls": "^3.1.1",
-    "jest": "^27.0.6",
-    "prettier": "^2.3.2",
-    "typescript": "^4.3.5"
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
   }
 }
