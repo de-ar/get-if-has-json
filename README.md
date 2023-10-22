@@ -5,6 +5,9 @@
 [![Latest Stable Version](https://img.shields.io/npm/v/get-if-has-json.svg)](https://www.npmjs.com/package/get-if-has-json)
 [![NPM Downloads](https://img.shields.io/npm/dt/get-if-has-json.svg)](https://www.npmjs.com/package/get-if-has-json)
 
+THIS PACKAGE IS A JOKE AND IS NOT TO BE USED FOR ACTUAL APPLICATIONS.
+IF YOU NEED THIS PACKAGE, ONLY GOD HIMSELF CAN GET YOU OUT OF IT.
+
 Extract JSON from a string that contains a bunch of crap before or after a valid JSON Object.
 
 ## Install
